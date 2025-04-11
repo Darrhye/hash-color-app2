@@ -35,12 +35,13 @@ def generate_reverse_chain_with_colors(seed, count):
     
     return results
 
+# Exibição dos resultados
 if st.button("🔄 Gerar Resultados"):
     if len(final_seed) != 64:
         st.error("A hash deve ter exatamente 64 caracteres (hexadecimal).")
     else:
         results = generate_reverse_chain_with_colors(final_seed, count)
 
-        st.markdown("### 🧾 Resultados")
+        st.markdown("### 🧾 Resultados com Cores")
         for index, hash_val, color in results:
-            st.write(f"{index}: `{hash_val}` → {color}")
+            st.markdown(f"**{index:03}**: `{hash_val}` → {color}")
